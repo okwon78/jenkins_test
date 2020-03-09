@@ -12,7 +12,7 @@ pipeline {
         
         stage("build") {
             steps {
-                sh 'echo ["${env.JOB_NAME}"]["${env.BUILD_NUMBER}"] building the application'
+                sh 'echo [${CURRENT_TIME}][${OWNER}] building the application'
                 sh 'echo "[${STAGE_NAME}] building the application"'
                 sh 'date'
             }
