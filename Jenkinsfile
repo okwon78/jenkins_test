@@ -19,8 +19,8 @@ pipeline {
 
         stage("test") {
             steps {
-                sh "echo testing the application ${OWER}"
-                sh 'echo testing the application ${OWER}'
+                sh "echo testing the application ${OWNER}"
+                sh 'echo testing the application ${OWNER}'
             }
         }
 
