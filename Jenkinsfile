@@ -4,26 +4,28 @@ pipeline {
     
     enviroment {
         CURRENT_TIME = ${date}
+        OWNER = "KWON"
     }
 
     stages {
         
         stage("build") {
             steps {
-                echo "[${CURRENT_TIME}] building the application"
+                sh echo "[${CURRENT_TIME}] building the application"
                 sh "date"
+                sh echo "owner ${OWER}"
             }
         }
 
         stage("test") {
             steps {
-                echo "testing the application"
+                sh echo "testing the application"
             }
         }
 
         stage("deploy") {
             steps {
-                echo "deploying the application"
+                sh echo "deploying the application"
             }
         }
 
