@@ -1,6 +1,10 @@
 pipeline {
     
     agent any
+    
+    envirment {
+        CURRENT_TIME = ${date}
+    }
 
     stages {
         
