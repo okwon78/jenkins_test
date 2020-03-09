@@ -2,7 +2,7 @@ pipeline {
     
     agent any
     
-    envirment {
+    enviroment {
         CURRENT_TIME = ${date}
     }
 
