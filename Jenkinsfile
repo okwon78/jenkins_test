@@ -10,7 +10,7 @@ pipeline {
         
         stage("build") {
             steps {
-                echo "building the application"
+                echo "[${CURRENT_TIME}] building the application"
                 sh "date"
             }
         }
