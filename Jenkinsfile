@@ -6,13 +6,17 @@ pipeline {
         CURRENT_TIME = sh(script: 'date', , returnStdout: true).trim()
         OWNER = "KWON"
     }
+    
+    script {
+        DATE_TAG = java.time.LocalDate.now()
+        DATETIME_TAG = java.time.LocalDateTime.now()
+    }
 
     stages {
         
         stage("build") {
             steps {
-                sh 'echo [${CURRENT_TIME}][${OWNER}] building the application'
-                sh 'echo ["${env.STAGE_NAME}"] building the application'
+                sh 'echo [${DATE_TAG}][${DATETIME_TAG}] building the application'
                 sh 'date'
             }
         }
