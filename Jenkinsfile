@@ -5,6 +5,7 @@ pipeline {
     environment {
         CURRENT_TIME = sh(script: 'date', , returnStdout: true).trim()
         OWNER = "KWON"
+        STAGE_NAME = env.STAGE_NAME
     }
 
     stages {
@@ -12,7 +13,7 @@ pipeline {
         stage("build") {
             steps {
                 sh 'echo ["${env.JOB_NAME}"]["${env.BUILD_NUMBER}"] building the application'
-                sh 'echo "[${CURRENT_TIME}] building the application"'
+                sh 'echo "[${STAGE_NAME}] building the application"'
                 sh 'date'
             }
         }
