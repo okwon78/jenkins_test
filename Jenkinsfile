@@ -11,7 +11,7 @@ pipeline {
         
         stage("build") {
             steps {
-                sh 'echo [${currentBuild}] building the application'
+                sh 'echo [${env.JOB_NAME}][${env.BUILD_NUMBER}] building the application'
                 sh 'echo "[${CURRENT_TIME}] building the application"'
                 sh 'date'
             }
