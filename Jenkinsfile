@@ -3,7 +3,7 @@ pipeline {
     agent any
     
     environment {
-        CURRENT_TIME = "$(date)"
+        CURRENT_TIME = sh("date")
         OWNER = "KWON"
     }
 
