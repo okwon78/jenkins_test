@@ -2,7 +2,7 @@ pipeline {
     
     agent any
     
-    enviroment {
+    environment {
         CURRENT_TIME = ${date}
         OWNER = "KWON"
     }
