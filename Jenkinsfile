@@ -14,13 +14,13 @@ pipeline {
                 sh 'echo [${CURRENT_TIME}] building the application'
                 sh 'echo "[${CURRENT_TIME}] building the application"'
                 sh 'date'
-                sh echo 'owner ${OWER}'
             }
         }
 
         stage("test") {
             steps {
-                sh echo "testing the application"
+                sh "echo testing the application ${OWER}"
+                sh 'echo testing the application ${OWER}'
             }
         }
 
