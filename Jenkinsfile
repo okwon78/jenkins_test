@@ -3,7 +3,7 @@ pipeline {
     agent any
     
     environment {
-        CURRENT_TIME = "${date}"
+        CURRENT_TIME = "sh ${date}"
         OWNER = "KWON"
     }
 
@@ -11,7 +11,7 @@ pipeline {
         
         stage("build") {
             steps {
-                sh 'echo [${CURRENT_TIME}] building the application'
+                sh 'echo [${currentBuild}] building the application'
                 sh 'echo "[${CURRENT_TIME}] building the application"'
                 sh 'date'
             }
