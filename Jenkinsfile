@@ -1,7 +1,7 @@
 pipeline {
     
     agent any
-    triggers { cron('05 * * * *') }
+    triggers { cron('H/10 * * * *') }
     
     environment {
         CURRENT_TIME = sh(script: 'date', , returnStdout: true).trim()
