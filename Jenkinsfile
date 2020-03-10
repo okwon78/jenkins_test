@@ -2,29 +2,18 @@ pipeline {
     
     agent any
     triggers { cron('05 * * * *') }
+    
     environment {
         CURRENT_TIME = sh(script: 'date', , returnStdout: true).trim()
         OWNER = "KWON"
-    }
-    
-    script {
-        DATE_TAG = java.time.LocalDate.now()
-        DATETIME_TAG = java.time.LocalDateTime.now()
     }
 
     stages {
         
         stage("build") {
             steps {
-                sh 'echo [${DATE_TAG}][${DATETIME_TAG}] building the application'
+                sh 'echo [] building the application'
                 sh 'date'
-            }
-        }
-
-        stage("test") {
-            steps {
-                sh "echo testing the application ${OWNER}"
-                sh 'echo testing the application ${OWNER}'
             }
         }
 
